@@ -349,6 +349,21 @@ module.exports = function GhostAdminAPI(options) {
         }
     };
 
+    api.utils = {
+        oembed(data) {
+            if (!data.url) {
+                return Promise.reject(new Error('Missing data.url'));
+            }
+
+            return makeApiRequest({
+                endpoint: endpointFor('oembed'),
+                method: 'GET',
+                body: '',
+                queryParams: data
+            });
+        }
+    };
+
     return api;
 
     function makeUploadRequest(resourceType, data, endpoint) {

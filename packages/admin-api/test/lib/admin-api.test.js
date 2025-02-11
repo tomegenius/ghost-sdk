@@ -5,6 +5,7 @@ const should = require('should');
 
 const GhostAdminAPI = require('../../lib/admin-api');
 const packageJSON = require('../../package.json');
+
 const packageVersion = packageJSON.version;
 
 describe('GhostAdminAPI general', function () {
@@ -88,7 +89,8 @@ describe('GhostAdminAPI general', function () {
             media: ['upload'],
             files: ['upload'],
             config: ['read'],
-            site: ['read']
+            site: ['read'],
+            utils: ['oembed']
         };
 
         should.deepEqual(Object.keys(keyMethodMap).sort(), Object.keys(api).sort());
@@ -118,7 +120,8 @@ describe('GhostAdminAPI general', function () {
             files: ['upload'],
             config: ['read'],
             site: ['read'],
-            subscribers: ['read', 'browse', 'add', 'edit', 'delete']
+            subscribers: ['read', 'browse', 'add', 'edit', 'delete'],
+            utils: ['oembed']
         };
 
         should.deepEqual(Object.keys(keyMethodMap).sort(), Object.keys(api).sort());
