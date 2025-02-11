@@ -1,4 +1,5 @@
 {
+  "name": "tg-ghost-sdk",
   "private": true,
   "repository": "https://github.com/TryGhost/SDK",
   "author": "Ghost Foundation",
